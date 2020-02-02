@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category  Module
+ * @package   MagentoGarage_Base
+ * @author    Aman Srivastava <aman.srivastava@live.com>
+ * @copyright Copyright (c) MagentoGarage (http://magentogarage.com)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+	<module name="MagentoGarage_FacebookPixel" setup_version="1.0.0">
+		<sequence>
+			<module name="MagentoGarage_Base" />
+			<module name="Magento_Catalog" />
+		</sequence>
+	</module>
+</config>

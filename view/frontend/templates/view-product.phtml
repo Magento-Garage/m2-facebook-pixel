@@ -1,0 +1,17 @@
+<script>
+require(["jquery"], function($){
+	fbq('track', 'ViewContent', {
+		content_category: '<?= $block->getCategoryName() ?>',
+		content_type: 'product',
+		currency: '<?= $block->getCurrentCurrencyCode() ?>',
+		content_name: '<?= $block->getProductName() ?>'
+	});
+	$("body").on("click", ".tocart", function(){
+		fbq("track", "addToCart", {
+			content_type: 'product',
+			currency: '<?= $block->getCurrentCurrencyCode() ?>',
+			contents: [{"id": "<?= $block->getProductSku() ?>", "quantity": "1"}]
+		});
+	});
+});
+</script>

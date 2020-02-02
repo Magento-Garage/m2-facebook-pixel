@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category  Module
+ * @package   MagentoGarage_Base
+ * @author    Aman Srivastava <aman.srivastava@live.com>
+ * @copyright Copyright (c) MagentoGarage (http://magentogarage.com)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="magentogarage_base" translate="label" sortOrder="1000">
+            <label>Magento Garage</label>
+        </tab>
+        <section id="magentogarage_facebookpixel" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Facebook Pixel</label>
+            <tab>magentogarage_base</tab>
+            <resource>MagentoGarage_FacebookPixel::config_system</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="status" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Status ?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="pixel" translate="label comment" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Facebook Pixel ID</label>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="status">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
