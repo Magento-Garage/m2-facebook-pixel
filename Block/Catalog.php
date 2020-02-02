@@ -22,13 +22,17 @@ class Catalog extends Pixel
 	}
 
 	public function getProductName($productId = NULL){
-		return $this->_getProduct()->getName();
+		return $this->_getProduct($productId)->getName();
 	}
 
 	public function getProductSku($productId = NULL){
-		return $this->_getProduct()->getSku();
+		return $this->_getProduct($productId)->getSku();
 	}
 
+	public function getProductPrice($productId = NULL){
+		return $this->_getProduct($productId)->getFinalPrice();
+	}
+	
 	protected function _getProduct($productId = NULL){
 		if(!$this->_product){
 			$this->_product = $this->_coreRegistry->registry('current_product');
