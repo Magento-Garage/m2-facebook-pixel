@@ -1,7 +1,7 @@
 <?php
 /**
  * @category  Module
- * @package   MagentoGarage_Base
+ * @package   MagentoGarage_FacebookPixel
  * @author    Aman Srivastava <aman.srivastava@live.com>
  * @copyright Copyright (c) MagentoGarage (http://magentogarage.com)
  */
@@ -23,24 +23,16 @@ class Pixel extends \Magento\Framework\View\Element\Template
      *
      * @param \Magento\Framework\App\Helper\Context $context
      * @param \Magento\Framework\Registry $coreRegistry
-     * @param \Magento\Catalog\Helper\Data $catalogHelper
-     * @param \Magento\Framework\App\Http\Context $httpContext
-     * @param \Magento\Catalog\Model\ProductFactory $productFactory
-     * @param \Magento\Checkout\Model\Session $checkoutSession
      * @param array $data
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \Magento\Framework\Registry $coreRegistry,
-        \Magento\Catalog\Helper\Data $catalogHelper,
-        \Magento\Framework\App\Http\Context $httpContext,
         array $data = []
     ) {
         $this->_scopeConfig     = $context->getScopeConfig();
         $this->_storeManager    = $context->getStoreManager();
         $this->_coreRegistry    = $coreRegistry;
-        $this->catalogHelper   = $catalogHelper;
-        $this->httpContext     = $httpContext;
         parent::__construct($context, $data);
     }
 

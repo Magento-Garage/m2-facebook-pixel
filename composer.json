@@ -1,0 +1,13 @@
+{
+    "name": "magento-garage/facebook-pixel",
+    "description": "Magento 2 facebook pixel integration",
+    "type": "magento2-module",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Aman Srivastava",
+            "email": "credevator@outlook.com"
+        }
+    ],
+    "require": {}
+}
