@@ -32,6 +32,10 @@ class Catalog extends Pixel
 	public function getProductPrice($productId = NULL){
 		return $this->_getProduct($productId)->getFinalPrice();
 	}
+
+	public function getSearchTerm(){
+		return "search_term will be here";
+	}
 	
 	protected function _getProduct($productId = NULL){
 		if(!$this->_product){

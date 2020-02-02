@@ -1,0 +1,13 @@
+<script>
+require(["jquery"], function($){
+	fbq('track', 'Search', {
+		search_string: '<?= $block->getSearchTerm() ?>'
+	});
+	$("body").on("click", ".tocart", function(){
+		fbq("track", "addToCart", {
+			content_type: 'product',
+			currency: '<?= $block->getCurrentCurrencyCode() ?>'
+		});
+	});
+});
+</script>
