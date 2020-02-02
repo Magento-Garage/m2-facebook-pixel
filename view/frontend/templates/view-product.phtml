@@ -7,13 +7,33 @@ require(["jquery"], function($){
 		content_ids: ['<?= $block->getProductSku() ?>'],
 		currency: '<?= $block->getCurrentCurrencyCode() ?>',
 		value: '<?= $block->getProductPrice() ?>',
+		source: 'magento',
+		version: "<?= $block->getMagentoVersion() ?>",
+		pluginVersion: "<?= $block->getPluginVersion() ?>",
 	});
-	$("body").on("click", ".tocart", function(){
-		fbq("track", "addToCart", {
+	$("body").on("click", ".action.tocart", function(){
+		fbq("track", "AddToCart", {
 			content_type: 'product',
 			currency: '<?= $block->getCurrentCurrencyCode() ?>',
-			contents: [{"id": "<?= $block->getProductSku() ?>", "quantity": "1"}]
+			content_ids: ['<?= $block->getProductSku() ?>'],
+			content_name: '<?= $block->getProductName() ?>',
+			contents: [{"id": "<?= $block->getProductSku() ?>", "quantity": "1"}],
+			source: 'magento',
+			version: "<?= $block->getMagentoVersion() ?>",
+			pluginVersion: "<?= $block->getPluginVersion() ?>",
+
 		});
 	});
+	$("body").on("click", ".action.towishlist", function(){
+		fbq("track", "AddToWishlist", {
+			content_type: 'product',
+			currency: '<?= $block->getCurrentCurrencyCode() ?>',
+			content_ids: ["<?= $block->getProductSku() ?>"],
+			source: 'magento',
+			version: "<?= $block->getMagentoVersion() ?>",
+			pluginVersion: "<?= $block->getPluginVersion() ?>",			
+		});
+	});
+
 });
 </script>

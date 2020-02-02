@@ -8,7 +8,11 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '<?= $block->getPixelCode() ?>'); 
-fbq('track', 'PageView');
+fbq('track', 'PageView', {
+      source: 'magento',
+      version: "<?= $block->getMagentoVersion() ?>",
+      pluginVersion: "<?= $block->getPluginVersion() ?>",
+});
 </script>
 <noscript>
 <img height="1" width="1" src="https://www.facebook.com/tr?id=<?= $block->getPixelCode() ?>&ev=PageView

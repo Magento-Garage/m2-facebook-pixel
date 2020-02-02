@@ -2,13 +2,29 @@
 require(["jquery"], function($){
 	fbq('track', 'ViewContent', {
 		content_name: '<?= $block->getCategoryName() ?>',
-		content_type: 'category'
+		content_type: 'category',
+		source: 'magento',
+		version: "<?= $block->getMagentoVersion() ?>",
+		pluginVersion: "<?= $block->getPluginVersion() ?>",
 	});
-	$("body").on("click", ".tocart", function(){
-		fbq("track", "addToCart", {
+	$("body").on("click", ".action.tocart", function(){
+		fbq("track", "AddToCart", {
 			content_type: 'product',
-			currency: '<?= $block->getCurrentCurrencyCode() ?>'
+			currency: '<?= $block->getCurrentCurrencyCode() ?>',
+			source: 'magento',
+			version: "<?= $block->getMagentoVersion() ?>",
+			pluginVersion: "<?= $block->getPluginVersion() ?>",
 		});
 	});
+	$("body").on("click", ".action.towishlist", function(){
+		fbq("track", "AddToWishlist", {
+			content_type: 'product',
+			currency: '<?= $block->getCurrentCurrencyCode() ?>',
+			source: 'magento',
+			version: "<?= $block->getMagentoVersion() ?>",
+			pluginVersion: "<?= $block->getPluginVersion() ?>",			
+		});
+	});
+
 });
 </script>

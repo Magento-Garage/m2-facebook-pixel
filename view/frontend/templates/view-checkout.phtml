@@ -1,0 +1,13 @@
+<script>
+require(["jquery"], function($){
+	fbq('track', 'InitiateCheckout', {
+		content_ids: ['<?= $block->getContentIds() ?>'],
+		num_items: <?= $block->getNumItems() ?>,
+		currency: '<?= $block->getCurrentCurrencyCode() ?>',
+		source: 'magento',
+		version: "<?= $block->getMagentoVersion() ?>",
+		pluginVersion: "<?= $block->getPluginVersion() ?>",
+
+	});
+});
+</script>

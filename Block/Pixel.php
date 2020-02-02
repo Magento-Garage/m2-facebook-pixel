@@ -41,6 +41,15 @@ class Pixel extends \Magento\Framework\View\Element\Template
 		return $this->_scopeConfig->getValue(self::MG_FBPIXEL_CODE, $storeScope);
 	}
 
+
+    public function getMagentoVersion(){
+        return "2.3.3"; //@TODO make it dynamic
+    }
+
+    public function getPluginVersion(){
+        return "1.0.0"; //@TODO make it dynamic
+    }
+
 	/**
 	* Get current store currency code
 	*

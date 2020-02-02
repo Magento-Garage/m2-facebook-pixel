@@ -1,12 +1,20 @@
 <script>
 require(["jquery"], function($){
+	
 	fbq('track', 'Search', {
-		search_string: '<?= $block->getSearchTerm() ?>'
+		search_string: '<?= $block->getSearchTerm() ?>',
+		source: 'magento',
+		version: "<?= $block->getMagentoVersion() ?>",
+		pluginVersion: "<?= $block->getPluginVersion() ?>",
 	});
 	$("body").on("click", ".tocart", function(){
 		fbq("track", "addToCart", {
 			content_type: 'product',
-			currency: '<?= $block->getCurrentCurrencyCode() ?>'
+			currency: '<?= $block->getCurrentCurrencyCode() ?>',
+			source: 'magento',
+			version: "<?= $block->getMagentoVersion() ?>",
+			pluginVersion: "<?= $block->getPluginVersion() ?>",			
+			
 		});
 	});
 });

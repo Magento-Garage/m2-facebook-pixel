@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category  Module
+ * @package   MagentoGarage_FacebookPixel
+ * @author    Aman Srivastava <aman.srivastava@live.com>
+ * @copyright Copyright (c) MagentoGarage (http://magentogarage.com)
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="before.body.end">
+            <block class="MagentoGarage\FacebookPixel\Block\Checkout" name="magentogarage.facebookpixel.view_purchase" template="MagentoGarage_FacebookPixel::view-purchase.phtml" after="magentogarage.facebookpixel.base" ifconfig="magentogarage_facebookpixel/general/status" />
+        </referenceContainer>
+    </body>
+</page>
